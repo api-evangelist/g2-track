@@ -7,9 +7,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Contract Management
   - SaaS Management
   - Spend Optimization
-  - Contract Management
 url: >-
   https://raw.githubusercontent.com/api-evangelist/g2-track/refs/heads/main/apis.yml
 created: '2026-03-27'
