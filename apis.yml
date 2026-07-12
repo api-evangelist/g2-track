@@ -32,10 +32,14 @@ apis:
       - type: Developer
         url: https://developer.bettercloud.com/
 common:
+  - type: DomainSecurity
+    url: security/g2-track-domain-security.yml
   - type: Website
     url: https://www.bettercloud.com/platform/spend-management/
   - type: Developer
     url: https://developer.bettercloud.com/
+  - url: https://www.bettercloud.com/monitor/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
