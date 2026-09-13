@@ -1,0 +1,67 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  https://www.bettercloud.com/.well-known/oauth-authorization-server +
+  https://developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json (operator's published
+  contract, read but not copied into this repo - see note)
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Authentication profile for the surfaces reachable from the G2 Track record. G2 Track is operated
+  by BetterCloud (acquired 2024-03-12, sold as BetterCloud Spend Optimization); there is no G2
+  Track-specific authentication surface, so what is recorded here is the operator's. Two distinct
+  schemes are in play and they are not interchangeable.
+schemes:
+- id: bettercloud-api-token
+  type: apiKey
+  in: header
+  name: Authorization
+  applies_to: https://api.bettercloud.com/api
+  description: >-
+    The BetterCloud platform API authenticates with a tenant-issued API token. The published
+    contract exposes GET /v1/tokens/lookup (operationId ValidateApiToken) purely to check a token is
+    valid. The published OpenAPI declares NO components.securitySchemes and no top-level security[],
+    so the scheme is documented in prose and in the token-lookup operation rather than in the
+    contract itself - a real gap in the operator's spec.
+  evidence:
+  - url: https://api.bettercloud.com/api/graphql
+    status: 401
+    body: '{"message":"No API key found in request"}'
+  - url: https://api.bettercloud.com/api-docs
+    status: 401
+    body: '{"message":"No API key found in request"}'
+  gated: true
+- id: bettercloud-site-mcp-oauth
+  type: oauth2
+  flow: authorization_code
+  applies_to: https://www.bettercloud.com/wp-json/mcp/mcp-oauth-server
+  description: >-
+    An OAuth 2.0 authorization server published at the operator's web host per RFC 8414, protecting
+    the MCP resource described in mcp/g2-track-mcp.yml. Public client (token_endpoint_auth_methods
+    "none") with mandatory PKCE S256, authorization_code + refresh_token grants, a single scope
+    `mcp`, and client registration by client_id metadata document rather than RFC 7591 DCR.
+  authorization_endpoint: https://www.bettercloud.com/oauth/authorize
+  token_endpoint: https://www.bettercloud.com/oauth/token
+  revocation_endpoint: https://www.bettercloud.com/oauth/revoke
+  scopes:
+  - id: mcp
+    description: The only scope the authorization server advertises.
+  pkce:
+  - S256
+  evidence:
+  - url: https://www.bettercloud.com/.well-known/oauth-authorization-server
+    status: 200
+  - url: https://www.bettercloud.com/.well-known/oauth-protected-resource
+    status: 200
+openid_connect: false
+mutual_tls: false
+note: >-
+  The BetterCloud OpenAPI 3.0.0 that documents the api-token scheme lives at
+  https://developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json and says of itself
+  info.title "BetterCloud API", servers https://api.bettercloud.com/api. It is the OPERATOR's
+  contract and covers the platform (authentication, error docs, GraphQL reporting, automation) - it
+  carries no Spend Optimization / G2 Track operations - so it belongs to all/bettercloud/ and was
+  deliberately NOT copied into this product record.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

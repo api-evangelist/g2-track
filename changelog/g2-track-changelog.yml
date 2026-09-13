@@ -1,0 +1,63 @@
+generated: '2026-09-12'
+method: searched
+source: https://www.bettercloud.com/latest-product-updates/
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Dated product-release log for the platform that carries G2 Track. G2 Track was acquired by
+  BetterCloud on 2024-03-12 and is sold today as BetterCloud Spend Optimization; BetterCloud
+  publishes one dated release log for the whole platform rather than a per-module changelog, and
+  Spend Optimization changes appear inside it. There is no separate API changelog: the developer
+  portal (developer.bettercloud.com) publishes no version history, and the published contract
+  carries info.version "1.0" with no date.
+url: https://www.bettercloud.com/latest-product-updates/
+scheme: dated-release-notes
+cadence: irregular - quarterly seasonal posts plus feature announcements
+covers: product platform (all modules)
+api_changelog: false
+api_changelog_note: >-
+  No API-level changelog, release notes feed, or version history found on developer.bettercloud.com
+  or api.bettercloud.com. Probed 2026-09-12.
+current_version:
+  api: '1.0'
+  source: info.version in https://developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json
+entries:
+- title: AI Governance arrives, freeform workflows, and custom IT Agents
+  date: '2026-08-28'
+  highlights: >-
+    BetterCloud AI Governance delivers shadow AI discovery with a single inventory for Cursor,
+    Anthropic, OpenAI, and GitHub Copilot governance.
+  breaking: false
+- title: Introducing BetterCloud's Next Generation Platform
+  date: '2026-06-17'
+  highlights: >-
+    Redesigned IT Cockpit, a natural language IT Agent, and Agent Governance for the SaaS
+    environment.
+  breaking: false
+- title: 'What''s new in BetterCloud: Spring 2026'
+  date: '2026-05-01'
+  highlights: Browser activity monitoring, sensitive data classification, employee lifecycle automation.
+  breaking: false
+- title: 'What''s new in BetterCloud: Winter 2026'
+  date: '2026-02-27'
+  highlights: File/email whitelisting, usage muting, new integrations.
+  breaking: false
+- title: 2025 BetterCloud product recap
+  date: '2025-12-31'
+  highlights: >-
+    100+ new actions, expanded license reclamation, smarter spend visibility, advanced workflow
+    automation.
+  breaking: false
+- title: Monthly product roundup - September/October 2025
+  date: '2025-10-31'
+  highlights: New integrations - Harvest, NetSuite, Shortcut - for workflow automation and license reclaim.
+  breaking: false
+- title: Monthly product roundup - July/August 2025
+  date: '2025-08-31'
+  highlights: >-
+    New ULM and Spend integrations, Google Cloud Identity SSO data, Contract Concierge upgrades,
+    inactive user alerts.
+  breaking: false
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,68 @@
+generated: '2026-09-12'
+method: searched
+source: >-
+  https://status.bettercloud.com/api/v2/summary.json +
+  https://www.bettercloud.com/monitor/bettercloud-announces-acquisition-of-g2-track/
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Lifecycle of the G2 Track product line and of the surfaces that carry it today. G2 Track is not
+  dead, but it no longer exists under that name: BetterCloud acquired the product line from G2 on
+  2024-03-12 and it is sold as BetterCloud Spend Optimization. The original product domain is gone;
+  the module is live and independently monitored.
+product_lifecycle:
+  stage: renamed-and-absorbed
+  original_name: G2 Track
+  current_name: BetterCloud Spend Optimization
+  operator: BetterCloud
+  acquired_by: BetterCloud
+  acquired_on: '2024-03-12'
+  evidence:
+  - url: https://www.bettercloud.com/monitor/bettercloud-announces-acquisition-of-g2-track/
+    note: BetterCloud's own acquisition announcement.
+  - url: https://status.bettercloud.com/api/v2/summary.json
+    status: 200
+    note: >-
+      The operator's status page lists "Spend Optimization" as its own monitored component, which is
+      the live successor surface for this record.
+  - url: https://www.bettercloud.com/pricing/
+    status: 200
+    note: Sells "Spend Optimization Basic for $0/month" and the full module by quote.
+  legacy_domain:
+    domain: g2track.com
+    status: parked
+    probed: '2026-09-12'
+    note: >-
+      g2track.com and www.g2track.com answer 200 with an ad-network "Redirecting..." interstitial,
+      not a product site. The standalone G2 Track web surface is gone.
+status_page:
+  url: https://status.bettercloud.com/
+  platform: Atlassian Statuspage
+  machine_readable: https://status.bettercloud.com/api/v2/summary.json
+  components_total: 38
+  product_component: Spend Optimization
+  probed: '2026-09-12'
+  status: 200
+versioning:
+  scheme: path
+  current: v1
+  evidence: >-
+    Every published operation is under /v1/ on https://api.bettercloud.com/api (the operator's
+    contract at developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json).
+  policy_published: false
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  note: >-
+    No deprecation or sunset policy is published on the developer portal or the support site, and no
+    RFC 8594 Sunset/Deprecation header behaviour is documented. The operator's contract does mark
+    one operation deprecated in its operationId (POST /v1/actions/executions,
+    "ExecuteAction[deprecated]") but states no timeline, so no Deprecation pointer is claimed here.
+sla:
+  published: false
+  note: >-
+    No public SLA document found; availability commitments sit inside the Main Subscription
+    Agreement (https://www.bettercloud.com/main-subscription-agreement/).
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,68 @@
+generated: '2026-09-12'
+method: probed
+source: https://www.bettercloud.com/.well-known/oauth-protected-resource
+provider: G2 Track
+providerId: g2-track
+name: BetterCloud site MCP server
+status: published
+description: >-
+  BetterCloud - the operator of G2 Track, which it acquired on 2024-03-12 and now sells as
+  BetterCloud Spend Optimization - advertises an OAuth-protected MCP endpoint from its primary web
+  host, the same host this record's Website pointer resolves to. The endpoint was NOT guessed: it is
+  taken verbatim from the `resource` field of the provider's own RFC 9728 protected-resource
+  metadata document, which names https://www.bettercloud.com as its authorization server and `mcp`
+  as the only supported scope. The tool list could not be enumerated: the WordPress REST API in
+  front of it answers `{"code":"rest_cannot_access","message":"DRA: Only authenticated users can
+  access the REST API."}` (401/403) to every anonymous request, so tools/list is auth-gated. This is
+  a site/content MCP surface published by the operator, not an MCP projection of the BetterCloud
+  platform API or of the Spend Optimization product.
+deployment:
+  mode: remote
+  endpoint: https://www.bettercloud.com/wp-json/mcp/mcp-oauth-server
+  auth: oauth
+  verified: probed
+authorization:
+  authorization_server: https://www.bettercloud.com
+  metadata:
+    authorization_server: https://www.bettercloud.com/.well-known/oauth-authorization-server
+    protected_resource: https://www.bettercloud.com/.well-known/oauth-protected-resource
+  grant_types:
+  - authorization_code
+  - refresh_token
+  pkce:
+  - S256
+  scopes:
+  - mcp
+  bearer_methods:
+  - header
+  dynamic_client_registration: client_id_metadata_document
+  token_endpoint_auth_methods:
+  - none
+tools: []
+tools_note: >-
+  Empty by design, not by omission. POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} to the
+  advertised endpoint (and to /wp-json/mcp, /wp-json/mcp/v1, /wp-json/wp/v2/wpmcp and
+  /wp-json/wp/v2/wpmcp/streamable) returned 403/401 with the DRA authenticated-users-only body on
+  2026-09-12. Input schemas require an authenticated introspection pass. No tool list is published
+  in BetterCloud's llms.txt either, so nothing was derived - inventing tools here would misdescribe
+  a live agent surface.
+probes:
+- url: https://www.bettercloud.com/.well-known/oauth-protected-resource
+  method: GET
+  status: 200
+  result: RFC 9728 document returned
+- url: https://www.bettercloud.com/.well-known/oauth-authorization-server
+  method: GET
+  status: 200
+  result: RFC 8414 document returned
+- url: https://www.bettercloud.com/wp-json/mcp/mcp-oauth-server
+  method: POST tools/list
+  status: 403
+  result: 'rest_cannot_access - DRA: Only authenticated users can access the REST API'
+- url: https://www.bettercloud.com/wp-json/
+  method: GET
+  status: 401
+  result: rest_cannot_access - WordPress REST API is authenticated-only
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

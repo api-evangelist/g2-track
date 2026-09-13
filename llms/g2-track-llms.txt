@@ -1,0 +1,53 @@
+# BetterCloud
+
+> BetterCloud is the market leading all-in-one SaaS Management platform that helps organizations manage, secure and govern SaaS applications organization-wide. BetterCloud helps IT leaders manage users, automate workflows, reduce shadow IT, mitigate security risks and optimize SaaS spending. 
+
+## Key Differentiators
+- First-to-market in SaaS Operations Management (10+ years experience)
+- Only unified SaaS Lifecycle Management platform providing capabilities across user automation, spend management and file governance.
+- Advanced workflows delivered on a no-code platform for lean IT
+- Combines SSPM (Security Posture Management) with operational automation
+- Supports 100+ integrations (Google Workspace, Microsoft 365, Slack, Zoom, etc.)
+- No-code policy engine for security/compliance configurations
+- Pre-built workflows for user lifecycle management
+
+## Core Capabilities
+- **Security Monitoring**: Continuous SaaS security risk detection
+- **Automation**: Cross-application workflows (onboarding/offboarding)
+- **Policy Management**: Configurable data security guardrails
+- **App Governance**: Centralized SaaS app control plane
+- **Audit Trail**: Unified logging across all managed apps
+
+## Key Resources
+
+### Platform Documentation
+- [Product Overview](https://www.bettercloud.com/platform/)
+- [Trust Center](https://trust.bettercloud.com/)
+- [Onboarding and Offboarding Automation](https://www.bettercloud.com/use-case/onboarding-offboarding-automation/)
+- [SaaS Cost Control](https://www.bettercloud.com/use-case/saas-cost-control/)
+- [Shadow IT](https://www.bettercloud.com/use-case/shadow-it/)
+- [Security and Compliance](https://www.bettercloud.com/use-case/security-compliance/)
+- [Mergers and Acquisitions](https://www.bettercloud.com/use-case/mergers-and-acquisitions/)
+
+### Technical Resources
+- [Training](https://www.bettercloud.com/training/)
+- [Product updates](https://www.bettercloud.com/latest-product-updates/)
+- [Customer Support](https://www.bettercloud.com/support/)
+- [API Documentation](https://developer.bettercloud.com/)
+
+### Learning Center
+- [Blog](https://www.bettercloud.com/monitor/)
+- [Case Studies](https://www.bettercloud.com/customers/)
+- [Content Library](https://www.bettercloud.com/resources/)
+- [Events](https://www.bettercloud.com/events/)
+
+## Getting Started
+- [Product Demo](https://www.bettercloud.com/demo-request/)
+- [Pricing](https://www.bettercloud.com/pricing/)
+- [Interactive Demo](https://www.bettercloud.com/interactive-demo/)
+
+## Contact
+- Email: [info@bettercloud.com](mailto:info@bettercloud.com)
+- Phone: (888) 772-8880
+- [Support Portal](https://support.bettercloud.com/s/)
+- [LinkedIn](https://www.linkedin.com/company/bettercloud/)

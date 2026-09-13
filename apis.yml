@@ -1,70 +1,147 @@
 aid: g2-track
 name: G2 Track
 description: >-
-  G2 Track (formerly Cleanshelf) was a SaaS management platform providing SaaS
-  spend monitoring, contract tracking, and usage insights. The product has
-  since been acquired and is now offered as BetterCloud Spend Optimization.
+  G2 Track was G2's SaaS spend management product — a single view of purchased applications, users,
+  contracts and license utilization, used by IT and finance teams to find shadow IT, reclaim unused
+  licenses and benchmark contracts ahead of renewal. BetterCloud acquired the G2 Track product line
+  from G2 on 2024-03-12 and sells it today as the BetterCloud Spend Optimization module of the
+  BetterCloud SaaS management platform, alongside User Automation, Workspace Management for Google
+  and File Governance. The standalone product is gone: g2track.com is now a parked ad-redirect page,
+  and the surviving surfaces — pricing, status, documentation, support and the platform API — are
+  BetterCloud's. There is no G2 Track-specific API; the module is reached through the BetterCloud
+  platform API at api.bettercloud.com, which BetterCloud documents on developer.bettercloud.com.
 type: Index
 deliveryModel:
-  model: unknown
+  model: saas
   open_source: false
-  commercial: false
-  callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call the operator's endpoint
+  confidence: medium
   source:
-  - none
-  generated: '2026-08-28'
+  - pricing
+  - authentication
+  generated: '2026-09-12'
   method: derived
 accessModel:
   pricing: freemium
-  onboarding: unknown
-  trial: false
+  onboarding: self-serve
+  trial: true
   try_now: false
   public: false
-  label: Freemium
-  confidence: medium
+  label: Freemium · Spend Optimization Basic is $0/month, the full module is quote-only
+  confidence: high
   source:
   - plans
-  generated: '2026-07-22'
-  method: derived
+  generated: '2026-09-12'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/g2-track.png
 tags:
-  - Contract Management
-  - SaaS Management
-  - Spend Optimization
+- Contract Management
+- SaaS Management
+- Spend Optimization
+- Shadow IT
+- License Management
+- Software Asset Management
+- IT Operations
 url: >-
   https://raw.githubusercontent.com/api-evangelist/g2-track/refs/heads/main/apis.yml
 created: '2026-03-27'
-modified: '2026-04-28'
+modified: '2026-09-12'
 specificationVersion: '0.23'
+position: Producing
 apis:
-  - aid: g2-track:g2-track
-    name: G2 Track
-    description: >-
-      G2 Track / Cleanshelf SaaS management product, now part of BetterCloud
-      Spend Optimization, providing spend monitoring, contract tracking, and
-      usage insights.
-    humanURL: https://www.bettercloud.com/platform/spend-management/
-    tags:
-      - SaaS Management
-      - Spend Optimization
-    properties:
-      - type: Documentation
-        url: https://www.bettercloud.com/platform/spend-management/
-      - type: Developer
-        url: https://developer.bettercloud.com/
-common:
-  - type: DomainSecurity
-    url: security/g2-track-domain-security.yml
-  - type: Website
-    url: https://www.bettercloud.com/platform/spend-management/
-  - type: Developer
+- aid: g2-track:g2-track
+  name: G2 Track
+  description: >-
+    G2 Track, the SaaS spend management product BetterCloud acquired from G2 on 2024-03-12 and now
+    sells as BetterCloud Spend Optimization — spend monitoring, contract tracking, license
+    reclamation and usage insights. The module has no API of its own; programmatic access is through
+    the BetterCloud platform API, whose published contract covers authentication, error
+    documentation, GraphQL reporting and automation.
+  humanURL: https://www.bettercloud.com/platform/spend-optimization/
+  baseURL: https://api.bettercloud.com/api
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/g2-track.png
+  tags:
+  - SaaS Management
+  - Spend Optimization
+  properties:
+  - type: Documentation
     url: https://developer.bettercloud.com/
-  - url: https://www.bettercloud.com/monitor/feed/
-    type: Blog
+  - type: DeveloperPortal
+    url: https://developer.bettercloud.com/
+  - type: APIReference
+    url: https://developer.bettercloud.com/
+  - type: Authentication
+    url: authentication/g2-track-authentication.yml
+  - type: RateLimits
+    url: rate-limits/g2-track-rate-limits.yml
+common:
+- type: Website
+  url: https://www.bettercloud.com/platform/spend-optimization/
+- type: DeveloperPortal
+  url: https://developer.bettercloud.com/
+- type: Documentation
+  url: https://developer.bettercloud.com/
+- type: APIReference
+  url: https://developer.bettercloud.com/
+- type: Pricing
+  url: https://www.bettercloud.com/pricing/
+- type: Plans
+  url: plans/g2-track-plans-pricing.yml
+- type: SignUp
+  url: https://www.bettercloud.com/spend-optimization-free-trial/
+- type: Login
+  url: https://app.bettercloud.com/
+- type: TermsOfService
+  url: https://www.bettercloud.com/main-subscription-agreement/
+- type: PrivacyPolicy
+  url: https://www.bettercloud.com/privacy-policy/
+- type: Support
+  url: https://www.bettercloud.com/support/
+- type: Blog
+  url: https://www.bettercloud.com/monitor/
+- type: BlogRSS
+  url: https://www.bettercloud.com/feed/
+- type: GitHubOrganization
+  url: https://github.com/BetterCloud
+- type: ChangeLog
+  url: changelog/g2-track-changelog.yml
+- type: Lifecycle
+  url: lifecycle/g2-track-lifecycle.yml
+- type: StatusPage
+  url: https://status.bettercloud.com/
+- type: Authentication
+  url: authentication/g2-track-authentication.yml
+- type: MCPServer
+  url: mcp/g2-track-mcp.yml
+- type: WellKnown
+  url: well-known/g2-track-well-known.yml
+- type: LLMsTxt
+  url: llms/g2-track-llms.txt
+- type: Conformance
+  url: conformance/g2-track-conformance.yml
+- type: Compliance
+  url: security/g2-track-trust-center.yml
+- type: TrustCenter
+  url: https://trust.bettercloud.com/
+- type: Security
+  url: security/g2-track-vulnerability-disclosure.yml
+- type: VulnerabilityDisclosure
+  url: security/g2-track-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/g2-track-domain-security.yml
+- type: Packages
+  url: packages/g2-track-packages.yml
+- type: RateLimits
+  url: rate-limits/g2-track-rate-limits.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: bettercloud
 x-relationship: product
+x-enrichment:
+  date: '2026-09-12'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3

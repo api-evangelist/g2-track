@@ -1,0 +1,102 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  https://www.bettercloud.com/.well-known/oauth-authorization-server,
+  https://www.bettercloud.com/.well-known/oauth-protected-resource,
+  https://status.bettercloud.com/api/v2/summary.json,
+  https://www.bettercloud.com/security-and-compliance/
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Cross-cutting standards this record's surfaces demonstrably conform to. Every entry is anchored to
+  a document that was actually fetched on 2026-09-12; nothing is asserted from a marketing claim
+  alone. The surfaces belong to BetterCloud, which has operated G2 Track since 2024-03-12 and sells
+  it as Spend Optimization.
+conformance:
+- id: rfc8414
+  name: OAuth 2.0 Authorization Server Metadata
+  conforms: true
+  evidence: https://www.bettercloud.com/.well-known/oauth-authorization-server
+  note: >-
+    200 with a JSON object carrying issuer, authorization_endpoint, token_endpoint,
+    revocation_endpoint, response_types_supported and grant_types_supported.
+- id: rfc9728
+  name: OAuth 2.0 Protected Resource Metadata
+  conforms: true
+  evidence: https://www.bettercloud.com/.well-known/oauth-protected-resource
+  note: 200 with resource, authorization_servers[], bearer_methods_supported and scopes_supported.
+- id: rfc7636
+  name: PKCE
+  conforms: true
+  evidence: https://www.bettercloud.com/.well-known/oauth-authorization-server
+  note: code_challenge_methods_supported ["S256"].
+- id: oauth2
+  name: OAuth 2.0 authorization code flow
+  conforms: true
+  evidence: https://www.bettercloud.com/.well-known/oauth-authorization-server
+  note: authorization_code + refresh_token grants, public client (token auth method "none").
+- id: rfc7591
+  name: OAuth 2.0 Dynamic Client Registration
+  conforms: false
+  evidence: https://www.bettercloud.com/.well-known/oauth-authorization-server
+  note: >-
+    No registration_endpoint. The server instead advertises
+    client_id_metadata_document_supported:true, the client-ID-metadata-document approach, which is
+    a different mechanism - recorded as not-conformant to 7591 rather than folded into it.
+- id: mcp
+  name: Model Context Protocol (OAuth-protected remote server)
+  conforms: partial
+  evidence: https://www.bettercloud.com/.well-known/oauth-protected-resource
+  note: >-
+    Discovery layer conforms - an MCP resource is advertised with scope `mcp` and an RFC 9728
+    document. The protocol layer could not be verified: tools/list is auth-gated (403).
+- id: rfc9116
+  name: security.txt
+  conforms: false
+  evidence: https://www.bettercloud.com/.well-known/security.txt
+  note: 404 on every host probed; the disclosure contact is published only as HTML prose.
+- id: openid-connect
+  name: OpenID Connect Discovery
+  conforms: false
+  evidence: https://www.bettercloud.com/.well-known/openid-configuration
+  note: 404 on every host probed.
+- id: statuspage-api
+  name: Atlassian Statuspage public API v2
+  conforms: true
+  evidence: https://status.bettercloud.com/api/v2/summary.json
+  note: >-
+    200 JSON, 38 components including a first-class "Spend Optimization" component - a
+    machine-readable availability feed for this product line.
+- id: soc2-type2
+  name: SOC 2 Type II
+  conforms: true
+  evidence: https://www.bettercloud.com/security-and-compliance/
+  note: Attestation stated by the operator; report released on request, not published.
+- id: iso-27001-2022
+  name: ISO/IEC 27001:2022
+  conforms: true
+  evidence: https://www.bettercloud.com/security-and-compliance/
+  note: Certificate published for download by the operator.
+- id: gdpr
+  name: GDPR
+  conforms: true
+  evidence: https://www.bettercloud.com/security-and-compliance/
+  note: Addressed via DPA and Main Subscription Agreement.
+- id: ccpa
+  name: CCPA
+  conforms: true
+  evidence: https://www.bettercloud.com/security-and-compliance/
+domain_standard:
+  assessed: true
+  found: false
+  note: >-
+    SaaS management / SaaS spend has no adopted interchange standard for the product surface, and
+    the operator's contract declares none - no SCIM schema URN, no OData $metadata, no FOCUS billing
+    export, no OpenRTB or comparable domain shape appears in
+    https://developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json. Recorded as an
+    honest miss under the reward-only rule; nothing was invented to fill the slot. (Worth noting
+    separately: the operator publishes an open-source SCIM 2.0 SDK for Spring at
+    github.com/BetterCloud/scim2, but its own API declares no SCIM surface.)
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

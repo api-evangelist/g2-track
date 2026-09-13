@@ -1,0 +1,62 @@
+generated: '2026-09-12'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, api.github.com/orgs/bettercloud/repos,
+  https://developer.bettercloud.com/
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Client-library survey for the API behind this record. G2 Track is operated by BetterCloud
+  (acquired 2024-03-12, sold as Spend Optimization). No first-party client SDK for the BetterCloud
+  API is published to any public registry, and none is offered on the developer portal - an
+  integrator writes HTTP calls by hand. Recorded as a measured zero, not an unchecked field.
+package_count: 0
+official_sdk_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search
+  queries:
+  - bettercloud
+  - g2track
+  - g2-track
+  result: no first-party package
+  checked: '2026-09-12'
+- registry: pypi
+  endpoint: https://pypi.org/pypi/{name}/json
+  queries:
+  - bettercloud
+  - g2track
+  result: 404 on both
+  checked: '2026-09-12'
+- registry: github
+  endpoint: https://api.github.com/orgs/bettercloud/repos
+  result: >-
+    Org exists with 10 public repos, none of which is a client for the BetterCloud API. The
+    published repos are infrastructure and standards work - vault-java-driver, bigtable-orm, scim2
+    (a SCIM 2.0 SDK for Spring), kadmin, collectd-vitess, spectral-redos-detector-ruleset,
+    bettercloud-openapi-rules (BetterCloud's own Spectral ruleset for its API standards), vitess
+    fork, react-infinite, BetterCloud.github.io. Most were last pushed between 2016 and 2024.
+  checked: '2026-09-12'
+related_first_party_repos:
+- name: bettercloud-openapi-rules
+  url: https://github.com/BetterCloud/bettercloud-openapi-rules
+  version: null
+  published: '2023-02-07'
+  published_note: last push date from the GitHub API; the repo is not published to any package registry
+  official: true
+  note: The operator's own Spectral ruleset enforcing its internal API standards. Not a client SDK.
+- name: scim2
+  url: https://github.com/BetterCloud/scim2
+  version: null
+  published: '2024-06-17'
+  published_note: last push date from the GitHub API; not published to Maven Central under a BetterCloud coordinate we could find
+  official: true
+  note: SCIM 2.0 SDK for Spring. A standards library the operator maintains, not a client for its own API.
+gap: >-
+  For the provider: a published OpenAPI (one exists, at
+  developer.bettercloud.com/assets/docs/BetterCloudAPI.OpenApi3.json) is enough to generate and
+  publish even one first-party client. Today the sdk surface is zero in every registry.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

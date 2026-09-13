@@ -1,0 +1,51 @@
+generated: '2026-09-12'
+method: searched
+source: https://trust.bettercloud.com/ + https://www.bettercloud.com/security-and-compliance/
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Trust center and published compliance program covering G2 Track, operated by BetterCloud. The
+  trust center itself is a Vanta-hosted client-rendered page: the served HTML is a 5.4KB SPA shell,
+  so the certification list below was read from BetterCloud's own first-party security-and-compliance
+  page rather than scraped from the trust center.
+trust_center:
+  url: https://trust.bettercloud.com/
+  platform: Vanta
+  status: 200
+  probed: '2026-09-12'
+  machine_readable: false
+  note: >-
+    JS-rendered. /api/trust-report and /api/v1/trust-center both return the same SPA shell, so no
+    structured certification feed is reachable anonymously.
+certifications:
+- name: SOC 2 Type II
+  status: attested
+  scope: security, availability, processing integrity, confidentiality, privacy
+  evidence: https://www.bettercloud.com/security-and-compliance/
+  report_access: on request via Customer Success Manager or Account Executive
+- name: ISO/IEC 27001:2022
+  status: certified
+  evidence: https://www.bettercloud.com/security-and-compliance/
+  note: BetterCloud publishes the certificate for download from its own site.
+privacy_regimes:
+- name: GDPR
+  mechanism: Data Processing Addendum + Main Subscription Agreement
+  evidence: https://www.bettercloud.com/security-and-compliance/
+- name: CCPA
+  mechanism: Main Subscription Agreement + Data Processing Addendum
+  evidence: https://www.bettercloud.com/security-and-compliance/
+- name: UK Data Protection Act 2018 / UK GDPR
+  mechanism: Data Processing Addendum
+  evidence: https://www.bettercloud.com/security-and-compliance/
+not_claimed:
+- HIPAA
+- FedRAMP
+- PCI DSS
+- StateRAMP
+- TX-RAMP
+not_claimed_note: >-
+  Recorded as an honest absence: none of these appear on BetterCloud's security-and-compliance page.
+  Absence here is not a finding against the provider, only a statement of what is published.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

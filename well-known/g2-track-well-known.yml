@@ -1,0 +1,330 @@
+generated: '2026-09-12'
+method: probed
+source: live HTTP probes of every host this record names (2026-09-12)
+provider: G2 Track
+providerId: g2-track
+description: >-
+  Probe of the named /.well-known/ path list across every host on the G2 Track record. G2 Track was
+  acquired by BetterCloud on 2024-03-12 and is sold today as BetterCloud Spend Optimization, so the
+  hosts probed are the operator's (bettercloud.com family) plus the product's own legacy domain
+  (g2track.com). Two real documents were returned, both by the operator's marketing host: an RFC 8414
+  OAuth authorization-server metadata document and an RFC 9728 protected-resource metadata document,
+  which together advertise an OAuth-protected MCP endpoint. Every other 200 in this file is an HTML
+  SPA or parked-domain catch-all, not a document, and is recorded as such.
+hosts:
+- host: www.bettercloud.com
+  note: >-
+    Operator marketing + content host; the Website pointer on this record resolves here. Serves two
+    real machine-readable documents.
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: g2-track-oauth-authorization-server.json
+    content_type: application/json
+    real_document: true
+    note: >-
+      RFC 8414. issuer https://www.bettercloud.com, PKCE S256, authorization_code + refresh_token,
+      scopes_supported [mcp], client_id_metadata_document_supported true.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: g2-track-oauth-protected-resource.json
+    content_type: application/json
+    real_document: true
+    note: >-
+      RFC 9728. resource https://www.bettercloud.com/wp-json/mcp/mcp-oauth-server, bearer header,
+      scope mcp. This is the discovery document for the MCP surface captured in mcp/.
+  - path: /.well-known/security.txt
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/openid-configuration
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/api-catalog
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+    result: miss
+- host: bettercloud.com
+  note: >-
+    Apex. Answers 200 with the same 651KB marketing HTML page for every /.well-known/ path - a
+    catch-all, not a document. Recorded as a miss on all paths.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all returns the marketing page for every well-known path
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all
+  - path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all
+  - path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all; rejected as an agent card per the A2A probe rule
+  - path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - apex catch-all; rejected as an agent card per the A2A probe rule
+- host: developer.bettercloud.com
+  note: Developer portal (S3-backed React SPA). Every well-known path returns an S3 NoSuchKey 404.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/openid-configuration
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/api-catalog
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+    result: miss
+- host: api.bettercloud.com
+  note: >-
+    Production API host (Kong gateway). Returns {"message":"no Route matched with those values"} 404
+    for every well-known path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/openid-configuration
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/api-catalog
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+    result: miss
+- host: app.bettercloud.com
+  note: Product console. S3 NoSuchKey 404 on every well-known path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/openid-configuration
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/api-catalog
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent-card.json
+    status: 404
+    real_document: false
+    result: miss
+  - path: /.well-known/agent.json
+    status: 404
+    real_document: false
+    result: miss
+- host: trust.bettercloud.com
+  note: >-
+    Vanta-hosted trust center. Answers 200 with the same 5.4KB Vanta SPA shell for every path -
+    a catch-all, not a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all
+  - path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all
+  - path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all; rejected as an agent card
+  - path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    result: spa-shell
+    content_type: text/html
+    note: html shell - Vanta SPA catch-all; rejected as an agent card
+- host: g2track.com
+  note: >-
+    The product's original domain. No longer operated as a product site: it answers 200 with an
+    ad-network "Redirecting..." interstitial for any path that resolves, and fails TLS/connection
+    (000) on others. A parked/monetised holding page, not a G2 Track surface.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/security.txt
+    status: 0
+    real_document: false
+    result: miss
+    note: connection failed
+  - path: /.well-known/agent-card.json
+    status: 0
+    real_document: false
+    result: miss
+    note: connection failed
+  - path: /.well-known/agent.json
+    status: 0
+    real_document: false
+    result: miss
+    note: connection failed
+- host: www.g2track.com
+  note: Same parked-domain behaviour as the apex.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    result: html-catchall
+    content_type: text/html
+    note: html shell - parked-domain ad redirect
+  - path: /.well-known/agent-card.json
+    status: 0
+    real_document: false
+    result: miss
+    note: connection failed
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
