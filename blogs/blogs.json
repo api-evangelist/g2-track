@@ -2,6 +2,20 @@
   "repo": "g2-track",
   "feeds": [
     {
+      "source": "https://www.bettercloud.com/support/",
+      "feed_url": "https://www.bettercloud.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.bettercloud.com/monitor/",
+      "feed_url": "https://www.bettercloud.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://www.bettercloud.com/monitor/feed/",
       "feed_url": "https://www.bettercloud.com/monitor/feed/",
       "title": "",
@@ -9,7 +23,7 @@
       "method": "feed"
     }
   ],
-  "fetched": "2026-09-06T19:17:18Z",
+  "fetched": "2026-09-13T13:00:00Z",
   "post_count": 34,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
