@@ -1,0 +1,30 @@
+# Front Door AI Index — g2-track — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: g2-track
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.bettercloud.com
+  final_host: www.bettercloud.com
+  ownership: shared
+  owner: bettercloud
+  shares_host_with:
+  - bettercloud
+  inherited_from: null
+  verdict: scored
+  score: null
+  host_score: 16
+  density: null
+  words: 1275
+  tiers:
+    agentic: 2
+    core: 14
+    model: 0
+  ambiguous: 11
+  top_terms:
+    AI: 14
+    automation: 6
+    agent: 5
+    AI agent: 1
+    agentic: 1
