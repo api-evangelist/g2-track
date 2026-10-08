@@ -77,6 +77,8 @@ apis:
   - type: RateLimits
     url: rate-limits/g2-track-rate-limits.yml
 common:
+- type: FinOps
+  url: finops/g2-track-finops.yml
 - type: Website
   url: https://www.bettercloud.com/platform/spend-optimization/
 - type: DeveloperPortal
