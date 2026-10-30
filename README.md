@@ -1,4 +1,4 @@
-# G2 Track (g2-track)
+# G2 Track
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,47 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-G2 Track (formerly Cleanshelf) was a SaaS management platform providing SaaS spend monitoring, contract tracking, and usage insights. The product has since been acquired and is now offered as BetterCloud Spend Optimization.
+G2 Track was G2's SaaS spend management product — a single view of purchased applications, users, contracts and license utilization, used by IT and finance teams to find shadow IT, reclaim unused licenses and benchmark contracts ahead of renewal. BetterCloud acquired the G2 Track product line from G2 on 2024-03-12 and sells it today as the BetterCloud Spend Optimization module of the BetterCloud SaaS management platform, alongside User Automation, Workspace Management for Google and File Governance. The standalone product is gone: g2track.com is now a parked ad-redirect page, and the surviving surfaces — pricing, status, documentation, support and the platform API — are BetterCloud's. There is no G2 Track-specific API; the module is reached through the BetterCloud platform API at api.bettercloud.com, which BetterCloud documents on developer.bettercloud.com.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/g2-track/refs/heads/main/apis.yml)
+**Areas:** Contract Management · SaaS Management · Spend Optimization · Shadow IT · License Management · Software Asset Management · IT Operations
 
-## Scope
+## G2 Track on APIs.io
 
-- **Type:** Index
+Everything profiled for G2 Track is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/g2-track/](https://apis.io/providers/g2-track/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Contract Management, SaaS Management, Spend Optimization
+- [G2 Track](https://apis.io/apis/g2-track/g2-track/) — G2 Track, the SaaS spend management product BetterCloud acquired from G2 on 2024-03-12 and now sells as BetterCloud Spend Optimization — spend monitoring,…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### G2 Track
+Model Context Protocol servers that expose the API to agents.
 
-G2 Track / Cleanshelf SaaS management product, now part of BetterCloud Spend Optimization, providing spend monitoring, contract tracking, and usage insights.
+- [BetterCloud site MCP server](https://apis.io/servers/g2-track/bettercloud-site-mcp-server/)
 
-**Human URL:** [https://www.bettercloud.com/platform/spend-management/](https://www.bettercloud.com/platform/spend-management/)
+#### Security (4)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- SaaS Management, Spend Optimization
+- [G2 Track Authentication](https://apis.io/security/g2-track/g2-track-authentication/)
+- [G2 Track Domain Security](https://apis.io/security/g2-track/g2-track-domain-security/)
+- [G2 Track Trust Center](https://apis.io/security/g2-track/g2-track-trust-center/)
+- [G2 Track Vulnerability Disclosure](https://apis.io/security/g2-track/g2-track-vulnerability-disclosure/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://www.bettercloud.com/platform/spend-management/)
-- [Developer](https://developer.bettercloud.com/)
+Published plans, tiers and prices.
 
-## Common Properties
+- [G2 Track Plans Pricing](https://apis.io/plans/g2-track/g2-track-plans-pricing/)
 
-- [Website](https://www.bettercloud.com/platform/spend-management/)
-- [Developer](https://developer.bettercloud.com/)
+#### Rate limits (1)
 
-## Maintainers
+Published request limits.
 
-**FN:** Kin Lane
+- [G2 Track Rate Limits](https://apis.io/rate-limits/g2-track/g2-track-rate-limits/)
 
-**Email:** kin@apievangelist.com
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [G2 Track Finops](https://apis.io/finops/g2-track/g2-track-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.bettercloud.com/platform/spend-optimization/)
+- [Documentation](https://developer.bettercloud.com/)
+- [API reference](https://developer.bettercloud.com/)
+- [Pricing](https://www.bettercloud.com/pricing/)
+- [Sign up](https://www.bettercloud.com/spend-optimization-free-trial/)
+- [Support](https://www.bettercloud.com/support/)
+- [Blog](https://www.bettercloud.com/monitor/)
+- [Trust centre](https://trust.bettercloud.com/)
+- [Terms of service](https://www.bettercloud.com/main-subscription-agreement/)
+- [Privacy policy](https://www.bettercloud.com/privacy-policy/)
+- [GitHub](https://github.com/BetterCloud)
+- [Status](https://status.bettercloud.com/)
+
+## API Evangelist rating
+
+**Kin Score 43.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 81.6 |
+
+**Agent readiness 19.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/g2-track/](https://apis.io/providers/g2-track/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for G2 Track: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/g2-track/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
