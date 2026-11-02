@@ -1,0 +1,54 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://www.bettercloud.com/pricing/
+sources:
+- https://www.bettercloud.com/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Pricing is quote-based ("Pricing reflects your license count, connected apps, chosen modules, and
+  any add-ons"); only numeric figure is a free $0/month Spend Optimization Basic tier plus a 21-day File
+  Governance trial.
+plan_count: 2
+currency: USD
+plans:
+- name: Spend Optimization Basic
+  price_text: Spend Optimization Basic for $0/month
+  price: 0
+  currency: USD
+  period: month
+  included_quota: a peek into license utilization and contract management
+- name: BetterCloud Platform / modules
+  price_text: Get a quote
+  period: none
+  included_quota: User Automation, Spend Optimization, Workspace Management for Google
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Spend Optimization Basic
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: BetterCloud Platform / modules
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
